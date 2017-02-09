@@ -4,7 +4,7 @@ Dépot de notre projet ISN 2017.
 
 ## Réalisé avec
 
-* [PHP](http://php.net/) - Princeipalement utilisé pour le site
+* [PHP](http://php.net/) - Principalement utilisé pour le site
 * [MySQL](https://www.mysql.fr/) - Utilisé pour les bases de données
 * [Processing](https://processing.org/) - Utilisé pour le jeu en lui-même
 
