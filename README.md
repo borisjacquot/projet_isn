@@ -1,6 +1,3 @@
-# projet_isn
-Projet ISN Bac 2017
-
 # Projet ISN
 
 Dépot de notre projet ISN 2017.
