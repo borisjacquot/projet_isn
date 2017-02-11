@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto');
+
+
+/* Grille */
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Fin Grille */
+
+
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+	border-radius: 10px 10px 0px 0px;
+	margin-left: 20%;
+	margin-right: 20%;
+	background-color: #F2F2F2;
+	height: 100%;
+}
+
+.cadre {
+	font-family: 'Roboto', sans-serif;
+	background-color: white;
+	margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.cadre:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.contenu {
+	padding: 2px 16px;
+}
+
+.logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+	margin-bottom: 5%;
+}
