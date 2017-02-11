@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:300,400');
 
 
 /* Grille */
@@ -40,24 +40,65 @@ html, body {
 	padding: 0;
 }
 
+hr { 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #22313F, #F2F2F2, #22313F);
+  background-image: -moz-linear-gradient(left, #22313F, #F2F2F2, #22313F);
+  background-image: -ms-linear-gradient(left, #22313F, #F2F2F2, #22313F);
+  background-image: -o-linear-gradient(left, #22313F, #F2F2F2, #22313F); 
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h1 {
+	font-family: 'Indie Flower', cursive;
+	color: white;
+	font-size: 60px;
+	margin-left: 5%;
+}
+
 .page {
 	border-radius: 10px 10px 0px 0px;
 	margin-left: 20%;
 	margin-right: 20%;
-	background-color: #F2F2F2;
-	height: 100%;
+	margin-top: 20%;
+	background-color: #22313F;
+	height: 200%;
+	box-shadow: 0 16px 32px 16px rgba(0,0,0,0.2);
+	padding-top: 10px;
+}
+
+.page p {
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
 }
 
 .cadre {
 	font-family: 'Roboto', sans-serif;
 	background-color: white;
 	margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-style: solid;
+    border-color: white;
     transition: 0.3s;
 }
 .cadre:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2);
+    border-color: #67809F;
 }
+
+.cadre img {
+	width: 100%;
+	height: auto;
+}
+
 .contenu {
 	padding: 2px 16px;
 }
@@ -68,4 +109,67 @@ html, body {
 	margin-right: auto;
 	margin-top: 2%;
 	margin-bottom: 5%;
+}
+
+.container {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.header {
+	background-color: #22313F;
+	width: 100%;
+	top: 0;
+	position: fixed;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+.titre {
+	float: left;
+	font-size: 20px;
+	margin-bottom: -40px;
+	margin-top: -20px;
+}
+
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+li a {
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+}
+
+li {
+	list-style: none;
+	float: left;
+	margin-top: -16px;
+	padding: 41.5px 40px 41.5px 40px;
+	transition: 0.3s;
+}
+li:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav {
+	float: right;
+}
+
+.citation {
+	background-color: #336E7B;
+	padding: 40px 0 40px 0;
+	margin-top: 50px;
+}
+
+.citation .txt {
+	font-size: 30px;
+}
+
+.citation .auteur {
+	font-size: 15px;
+	font-style: italic;
+	float: right;
+	margin-top: -20px;
 }
