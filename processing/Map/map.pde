@@ -16,7 +16,6 @@ void setup()
 void draw()
 {
  level();
- mondeDrawGRILLE();
  position();
  deplacement();
  }
