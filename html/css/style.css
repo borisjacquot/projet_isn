@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Arvo|Roboto:300,400');
 
 
 /* Grille */
@@ -33,7 +33,6 @@
 /* Fin Grille */
 
 
-
 html, body {
 	margin: 0;
 	padding: 0;
@@ -51,7 +50,7 @@ hr {
 }
 
 h1 {
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Arvo', serif;
 	color: white;
 	font-size: 60px;
 	margin-left: 5%;
