@@ -19,43 +19,47 @@ void keyPressed(){
 }
 
 void keyReleased() {
-  if(keyCode == RIGHT) {
-    holdRight = false;
-    Perso = loadImage("linkmarche.png");
-  }
-    if(keyCode ==LEFT) {
-    holdLeft = false;
-    Perso = loadImage("linkmarchegauche.png");
-  }
-    if(keyCode == UP) {
-    holdUp = false;
-    Perso = loadImage("linkmarchehaut.png");
-  }
-    if(keyCode ==DOWN) {
-    holdDown = false;
-    Perso = loadImage("linkmarchebas.png");
-  }
+  if(keyCode == RIGHT)
+    {
+      holdRight = false;
+      Perso = loadImage("linkmarche.png");
+    }
+    if(keyCode ==LEFT)
+    {
+      holdLeft = false;
+      Perso = loadImage("linkmarchegauche.png");
+    }
+    if(keyCode == UP)
+    {
+      holdUp = false;
+      Perso = loadImage("linkmarchehaut.png");
+    }
+    if(keyCode ==DOWN)
+    {
+      holdDown = false;
+      Perso = loadImage("linkmarchebas.png");
+    }
 }
 
 void deplacement()
 {
   
- if(holdRight) 
+ if(holdRight)
  {
     persoX++;
     Perso = loadImage("linkcours.png");
   }
-      if(holdLeft) 
+      if(holdLeft)
   {
     persoX--;
     Perso = loadImage("linkcoursgauche.png");
   }
-      if(holdUp) 
+      if(holdUp)
   {
     persoY--;
     Perso = loadImage("linkcourshaut.png");
   }
-      if(holdDown) 
+      if(holdDown)
   {
     persoY++;
     Perso = loadImage("linkcoursbas.png");
