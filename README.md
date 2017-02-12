@@ -13,6 +13,7 @@ Dépot de notre projet ISN 2017.
 * **Boris Jacquot** - *Site internet*
 * **Clément Millard** - *Processing*
 * **Nicolas Bouzon** - *Processing*
+* **Avanise** - *Graphismes*
 
 ## License
 
