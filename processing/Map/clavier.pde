@@ -43,7 +43,8 @@ void keyReleased() {
 
 void deplacement()
 {
-  
+int pxAvant = persoX;
+int pyAvant = persoY;
  if(holdRight)
  {
     persoX++;
@@ -64,4 +65,11 @@ void deplacement()
     persoY++;
     Perso = loadImage("linkcoursbas.png");
   } 
+  int CarreauSousPerso = dessousperso(persoX,persoY);
+  
+  if(CarreauSousPerso == case_mur)
+  {
+    persoX = pxAvant;
+    persoY = pyAvant;
+  }
 }
