@@ -35,7 +35,6 @@
 
 
 html, body {
-	height: 100%;
 	margin: 0;
 	padding: 0;
 }
@@ -47,8 +46,8 @@ hr {
   background-image: -moz-linear-gradient(left, #22313F, #F2F2F2, #22313F);
   background-image: -ms-linear-gradient(left, #22313F, #F2F2F2, #22313F);
   background-image: -o-linear-gradient(left, #22313F, #F2F2F2, #22313F); 
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 20px 10%;
+  margin-top: 30px;
 }
 
 h1 {
@@ -147,7 +146,11 @@ li {
 	transition: 0.3s;
 }
 li:hover {
-	background-color: rgba(255, 255, 255, 0.2);0, 177, 106
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.active {
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .icone {
@@ -197,4 +200,59 @@ button {
 
 button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login {
+	border-radius: 10px;
+	margin-left: 35%;
+	margin-right: 35%;
+	margin-top: 20%;
+	background-color: #22313F;
+	padding: 2% 7%;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login input[type=text],input[type=password],input[type=email] {
+	width: 100%;
+	padding: 12px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1px solid white;
+    background-color: #22313F;
+    color: white;
+    transition: 0.3s;
+    outline: none;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login input[type=text]:focus,input[type=password]:focus,input[type=email]:focus {
+	border-color: #22313F;
+	background-color: #336E7B;
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
+}
+
+.login input[type=submit] {
+	width: 100%;
+	padding: 12px 20px;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+	font-size: 20px;
+	background-color: #336E7B;
+    border: none;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.3s;
+    margin-top: 4px;
+}
+
+.login input[type=submit]:hover {
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
+}
+
+.login p {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
 }
