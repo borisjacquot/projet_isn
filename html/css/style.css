@@ -63,8 +63,8 @@ h1 {
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 20%;
+	padding-bottom: 20px;
 	background-color: #22313F;
-	height: 200%;
 	box-shadow: 0 16px 32px 16px rgba(0,0,0,0.2);
 	padding-top: 10px;
 }
@@ -82,16 +82,13 @@ h1 {
 
 .cadre {
 	font-family: 'Roboto', sans-serif;
-	background-color: white;
+	background-color: #336E7B;
 	margin: auto;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    border-style: solid;
-    border-color: white;
     transition: 0.3s;
 }
 .cadre:hover {
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2);
-    border-color: #67809F;
 }
 
 .cadre img {
@@ -150,7 +147,14 @@ li {
 	transition: 0.3s;
 }
 li:hover {
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.2);0, 177, 106
+}
+
+.icone {
+	padding: 41.5px 20px 41.5px 20px;
+}
+.icone:hover {
+	background-color: rgba(0, 177, 106, 0.2);
 }
 
 .nav {
@@ -172,4 +176,25 @@ li:hover {
 	font-style: italic;
 	float: right;
 	margin-top: -20px;
+}
+
+button {
+    background-color: #336E7B;
+    border: none;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 7px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+	font-size: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
