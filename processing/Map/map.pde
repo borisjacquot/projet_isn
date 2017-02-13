@@ -22,6 +22,7 @@ void draw()
  level();
  vie();
  environnement();
+ mondeDrawGRILLE();
  position();
  deplacement();
  }
@@ -54,4 +55,10 @@ void position()
 void environnement()
 {
   image(lave,laveX-lave.width,laveY);
+  image(lave,(laveX+20)-lave.width,laveY);
+  image(lave,(laveX+20)-lave.width,laveY);
+  image(lave,laveX-lave.width,laveY+20);
+  image(lave,(laveX+20)-lave.width,laveY+20);
+  image(lave,(laveX+20)-lave.width,laveY+20);
+  
 }

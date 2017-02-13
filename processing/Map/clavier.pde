@@ -72,4 +72,8 @@ int pyAvant = persoY;
     persoX = pxAvant;
     persoY = pyAvant;
   }
+  if(CarreauSousPerso == case_lave)
+  {
+   vie=vie-deg_lave;
+  }
 }
