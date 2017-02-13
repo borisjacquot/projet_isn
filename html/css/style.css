@@ -107,8 +107,8 @@ h1 {
 }
 
 .container {
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .header {
@@ -141,7 +141,7 @@ li {
 	list-style: none;
 	float: left;
 	margin-top: -16px;
-	padding: 41.5px 40px 41.5px 40px;
+	padding: 41.5px 40px;
 	transition: 0.3s;
 }
 li:hover {
@@ -254,4 +254,68 @@ button:hover {
 	font-weight: 300;
 	font-size: 16px;
 	text-align: center;
+}
+
+.classement {
+	border-radius: 10px 10px 0px 0px;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 20%;
+	padding-bottom: 20px;
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: #22313F;
+	box-shadow: 0 16px 32px 16px rgba(0,0,0,0.2);
+	padding-top: 10px;
+}
+
+.classement p {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.classement .log {
+	color: #95A5A6;
+	transition: 0.3s;
+}
+
+.classement .log:hover {
+	color: white;
+}
+
+.avatar {
+	border-radius: 50%;
+	width: auto;
+	height:125px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: 0.3s;
+}
+.avatar:hover {
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
+}
+
+.score {
+	background-color: #336E7B;
+	padding: 27px 50px;
+	height: 100%;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: 0.3s;
+}
+
+.score .label {
+	background-color: #47b475;
+	color: white;
+	margin-left: 100px;
+	padding: 5px 10px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: 0.3s;
+}
+
+.score .label:hover {
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
+}
+.score:hover {
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
 }
