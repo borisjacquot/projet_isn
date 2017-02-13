@@ -4,18 +4,24 @@ int ymur=25;      // hauteur y du bas des murs du haut
 int epmur=10;    //epaisseur des murs
 int hmurg=50;   //hauteur mur gauche
 
-int persoX=100,persoY=100;
 PImage Perso;
+int persoX=100,persoY=100;
+PImage lave;
+int laveX=200;
+int laveY=200;
 
 void setup()
 {
  size(500,500);
  Perso = loadImage("linkmarche.png");
-}
+ lave = loadImage("lave.png");
+ }
 
 void draw()
 {
  level();
+ vie();
+ environnement();
  position();
  deplacement();
  }
@@ -43,4 +49,9 @@ void level()
 void position() 
 {
   image(Perso,persoX-Perso.width,persoY-Perso.height);
+}
+
+void environnement()
+{
+  image(lave,laveX-lave.width,laveY);
 }
