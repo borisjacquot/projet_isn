@@ -89,7 +89,7 @@ void mondeDrawGRILLE()
              rect(Colonne *case_mur_largeur, Rangee *case_mur_hauteur, case_mur_largeur, case_mur_hauteur);
              break;
              
-             case case_lave:             
+             case case_lave:
              fill(255,0,0,50);
              rect(Colonne *case_mur_largeur, Rangee *case_mur_hauteur, case_mur_largeur, case_mur_hauteur);
              break;

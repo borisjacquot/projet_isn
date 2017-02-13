@@ -55,10 +55,13 @@ void position()
 void environnement()
 {
   image(lave,laveX-lave.width,laveY);
-  image(lave,(laveX+20)-lave.width,laveY);
-  image(lave,(laveX+20)-lave.width,laveY);
-  image(lave,laveX-lave.width,laveY+20);
-  image(lave,(laveX+20)-lave.width,laveY+20);
-  image(lave,(laveX+20)-lave.width,laveY+20);
+  image(lave,(laveX+25)-lave.width,laveY);
+  image(lave,(laveX+50)-lave.width,laveY);
+  image(lave,laveX-lave.width,laveY+25);
+  image(lave,(laveX+25)-lave.width,laveY+25);
+  image(lave,(laveX+50)-lave.width,laveY+25);
+  image(lave,laveX-lave.width,laveY+50);
+  image(lave,(laveX+25)-lave.width,laveY+50);
+  image(lave,(laveX+50)-lave.width,laveY+50);
   
 }

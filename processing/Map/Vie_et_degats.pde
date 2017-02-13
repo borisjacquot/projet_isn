@@ -1,5 +1,5 @@
 int vie=100;
-int deg_lave=5;
+int deg_lave=1;
 
 void vie()
 {
@@ -7,5 +7,4 @@ void vie()
   textSize(15);
   text("vie",20,100);
   text(vie,18,120);
-   
 }
