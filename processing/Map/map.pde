@@ -15,6 +15,7 @@ void setup()
  size(500,500);
  Perso = loadImage("linkmarche.png");
  lave = loadImage("lave.png");
+ MessMort = loadImage("Messmort.png");
  }
 
 void draw()
@@ -50,6 +51,10 @@ void level()
 void position() 
 {
   image(Perso,persoX-Perso.width,persoY-Perso.height);
+  if (vie<=0)
+  {
+    Perso = loadImage("mort.gif");
+  }
 }
 
 void environnement()
