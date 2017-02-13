@@ -22,7 +22,7 @@ void draw()
  level();
  vie();
  environnement();
- mondeDrawGRILLE();
+ //mondeDrawGRILLE();
  position();
  deplacement();
  }
