@@ -125,6 +125,7 @@ h1 {
 	font-size: 20px;
 	margin-bottom: -40px;
 	margin-top: -20px;
+	text-shadow: 0 10px 16px rgba(0,0,0,0.24);
 }
 
 a {
@@ -135,6 +136,7 @@ a {
 li a {
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
+	text-shadow: 0 10px 16px rgba(0,0,0,0.24);
 }
 
 li {
@@ -154,6 +156,7 @@ li:hover {
 
 .icone {
 	padding: 41.5px 20px 41.5px 20px;
+	text-shadow: 0 10px 16px rgba(0,0,0,0.24);
 }
 .icone:hover {
 	background-color: rgba(0, 177, 106, 0.2);
@@ -279,6 +282,7 @@ button:hover {
 .classement .log {
 	color: #95A5A6;
 	transition: 0.3s;
+	text-shadow: 0 5px 16px black;
 }
 
 .classement .log:hover {
@@ -318,4 +322,15 @@ button:hover {
 }
 .score:hover {
 	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
+}
+
+.fondscore {
+	margin-left: 0;
+	margin-right: 0;
+	background-color: #22313F;
+	padding-left: 12%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	margin-top: 100px;
 }
