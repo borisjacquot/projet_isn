@@ -15,7 +15,7 @@ void setup()
  size(500,500);
  Perso = loadImage("linkmarche.png");
  lave = loadImage("lave.png");
- MessMort = loadImage("Messmort.png");
+ MessMort = loadImage("MessMort.png");
  }
 
 void draw()
