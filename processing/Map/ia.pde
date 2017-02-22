@@ -10,55 +10,67 @@ void ennemi()
   fill(20,130,15,50);
   ellipse(enX+5,enY+5,endetect,endetect);      // zone de detection
   
-  if(persoX>(enX+5)-enRay && persoY > (enY+5)-enRay &&persoX>(enX+5) && persoY>(enY+5))    //haut gauche ray detect
+ if(persoX>(enX+5)-enRay && persoY>(enY+5)-enRay && persoX<enX+5 && persoY<enY+5)        // haut gauche ray detect
   {
-    if(persoX<enX+5)
+    if(persoX<=enX+5)
     {
     enX=enX-enVit;
     }
-    if(persoY<enY+5)
+    if(persoY<=enY+5)
     {
-    enY=enY+enVit;
+    enY=enY-enVit;
     }
   }
   if(persoX>(enX+5)-enRay && persoY<(enY+5)+enRay && persoX<enX+5 && persoY>enY+5)        // bas gauche ray detect
   {
-    if(persoX<enX+5)
+    if(persoX<=enX+5)
     {
     enX=enX-enVit;
     }
-    if(persoY>enY+5)
+    if(persoY>=enY+5)
     {
     enY=enY+enVit;
     }
   }
   
-  /*
-  if(persoX>(enX+5)+enRay && persoY > (enY+5)-enRay )
+ if(persoX<(enX+5)+enRay && persoY>(enY+5)-enRay && persoX>enX+5 && persoY<enY+5)        // haut droit ray detect
   {
-    if(persoX<enX+5)
+    if(persoX>=enX+5)
     {
-    enX=enX-enVit;
+    enX=enX+enVit;
     }
-    if(persoY>enY+5)
+    if(persoY<=enY+5)
     {
-    enY=enY+enVit;
+    enY=enY-enVit;
     }
-  }/*
-  if(persoX<(enX+5)-enRay && persoY > (enY+5)-enRay )
+  }
+  if(persoX<(enX+5)+enRay && persoY<(enY+5)+enRay && persoX>enX+5 && persoY>enY+5)        // bas droit ray detect
   {
-    if(persoX<enX+5)
+    if(persoX>=enX+5)
     {
-    enX=enX-enVit;
+    enX=enX+enVit;
     }
-    if(persoY>enY+5)
+    if(persoY>=enY+5)
     {
     enY=enY+enVit;
     }
   }
-  else {
-   enX=200;
-   enY=300;
+  if(persoX==enX+5 && persoY<enY+5)
+  {
+    enY=enY-enVit;
   }
-  */
+  if(persoY==enY+5 && persoX<enX+5)
+  {
+   enX=enX-enVit; 
+  }
+  if(persoX==enX+5 && persoY>enY+5)
+  {
+    enY=enY+enVit;
+  }
+  if(persoY==enY+5 && persoX>enX+5)
+  {
+   enX=enX+enVit; 
+  }
+  
+  
 }
