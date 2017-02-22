@@ -80,7 +80,7 @@ void mondeDrawGRILLE()
            switch(mondeGRILLE[Rangee][Colonne]) 
           {
              case case_libre:
-             fill(0,0,0, 20);
+             fill(0,0,0,20);
              rect(Colonne *case_mur_largeur, Rangee *case_mur_hauteur, case_mur_largeur, case_mur_hauteur);
              break;
            

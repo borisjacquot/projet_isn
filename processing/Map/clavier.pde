@@ -3,6 +3,8 @@ boolean holdLeft = false;
 boolean holdUp = false;
 boolean holdDown = false;
 
+int persoVit=2;   // vitesse du personnage
+
 void keyPressed(){
   if(keyCode == RIGHT) {
     holdRight = true;
@@ -47,22 +49,22 @@ int pxAvant = persoX;
 int pyAvant = persoY;
  if(holdRight && vie>0)
  {
-    persoX++;
+    persoX=persoX+persoVit;
     Perso = loadImage("linkcours.png");
   }
       if(holdLeft && vie>0)
   {
-    persoX--;
+    persoX=persoX-persoVit;
     Perso = loadImage("linkcoursgauche.png");
   }
       if(holdUp && vie>0)
   {
-    persoY--;
+    persoY=persoY-persoVit;
     Perso = loadImage("linkcourshaut.png");
   }
       if(holdDown && vie>0)
   {
-    persoY++;
+    persoY=persoY+persoVit;
     Perso = loadImage("linkcoursbas.png");
   } 
   int CarreauSousPerso = dessousperso(persoX,persoY);

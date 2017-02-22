@@ -4,11 +4,17 @@ int ymur=25;      // hauteur y du bas des murs du haut
 int epmur=10;    //epaisseur des murs
 int hmurg=50;   //hauteur mur gauche
 int hmurd = xbox-hmurg; // epaisseur mur droit
+
+        //Chargement et position initial du personnage
 PImage Perso;
 int persoX=100,persoY=100;
+
+        //Chargement lave
 PImage lave;
 int laveX=200;
 int laveY=200;
+        
+        //Chargement des images
 PImage sol;
 PImage lave_CoinHG;
 PImage lave_CoinHD;
@@ -24,6 +30,8 @@ PImage lave_gauche;
 void setup()
 {
  size(500,500);
+ 
+         //Affectation des images a des noms
  Perso = loadImage("linkmarche.png");
  lave = loadImage("lave.png");
  MessMort = loadImage("MessMort.png");
@@ -41,11 +49,13 @@ void setup()
 void draw()
 {
  level();
- vie();
  environnement();
  //mondeDrawGRILLE();
  position();
  deplacement();
+ vie();
+ 
+ ennemi();
  }
 
 
@@ -81,7 +91,7 @@ void environnement()
 {
   int solX=hmurg+1;
   int solY=ymur+1;
-  
+                              //sol
   image(sol,solX,solY);
   image(sol,solX+100,solY);
   image(sol,solX+200,solY);
@@ -102,7 +112,7 @@ void environnement()
   image(sol,solX+100,solY+350);
   image(sol,solX+200,solY+350);
   image(sol,solX+300,solY+350);
-  
+                                                //Lave
   image(lave_CoinHG,laveX-lave.width,laveY);
   image(lave_haut,(laveX+25)-lave.width,laveY);
   image(lave_CoinHD,(laveX+50)-lave.width,laveY);
