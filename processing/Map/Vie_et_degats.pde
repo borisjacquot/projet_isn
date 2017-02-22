@@ -12,7 +12,7 @@ void vie()
   if(vie<=0)
   {
     barrevie=0;
-    image(MessMort,xbox/3,ybox/6);
+    image(MessMort,xbox/3,ybox/6); 
   }
   fill(0);
   rect(10,80,40,50);
