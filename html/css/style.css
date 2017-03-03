@@ -377,3 +377,38 @@ button:hover {
 .auteur .label a:hover {
 	color: #3A539B;
 }
+
+.avatar_membre {
+	border-radius: 50%;
+	width: auto;
+	height:200px;
+	margin-top: 10px;
+	margin-bottom: -20px;
+}
+
+
+.barre_title { 
+  border: 0; 
+  height: 3px; 
+  background-image: -webkit-linear-gradient(left, #22313F, #F39C12, #22313F);
+  background-image: -moz-linear-gradient(left, #22313F, #F39C12, #22313F);
+  background-image: -ms-linear-gradient(left, #22313F, #F39C12, #22313F);
+  background-image: -o-linear-gradient(left, #22313F, #F39C12, #22313F); 
+  margin: 20px 10%;
+  margin-top: -13px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.title {
+	background-color: #F39C12;
+	padding: 10px 40px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: 0.3s;
+}
+.title:hover {
+	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
+}
