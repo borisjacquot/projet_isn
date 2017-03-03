@@ -17,4 +17,4 @@ Dépot de notre projet ISN 2017.
 
 ## License
 
-Voir le fichier [LICENSE.md](LICENSE.md) pour plus de détails.
+Voir le fichier [LICENCE.md](LICENCE.md) pour plus de détails.
