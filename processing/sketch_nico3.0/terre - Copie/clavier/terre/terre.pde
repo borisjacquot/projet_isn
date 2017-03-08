@@ -16,6 +16,7 @@ PImage lac;
 PImage muret;
 PImage solmuret;
 PImage solettable;
+PImage bibli;
 
 
 
@@ -31,6 +32,7 @@ void setup()
  murpobon= loadImage("murpobon.png");
  solmuret= loadImage("solmuret.png");
  solettable= loadImage("solettable.png");
+ bibli= loadImage("bibli.png");
  }
 
 void draw()
@@ -58,19 +60,21 @@ void environnement()
   image(murpobon,solX,solY);
   image(murpobon,solX+100,solY);
   image(murpobon,solX+200,solY);
-  image(murpobon,solX+300,solY);
+  
+  image(bibli,solX+300,solY);
   
   image(canapeplante,solX,solY+100);
   
   image(sol,solX+100,solY+100);
   image(sol,solX+200,solY+100);
   
-  image(solettable,solX+300,solY+100);
+  image(sol,solX+300,solY+100);
+  image(sol,solX+300,solY+200);
   
   image(sol,solX,solY+200);
   image(sol,solX+100,solY+200);
   image(sol,solX+200,solY+200);
-  
+  image(solettable,solX+300,solY+125);
   image(solmuret,solX+300,solY+200);
   
   image(sol,solX,solY+300);
