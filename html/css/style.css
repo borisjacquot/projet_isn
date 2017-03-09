@@ -412,3 +412,36 @@ button:hover {
 .title:hover {
 	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
 }
+
+.achievement{
+	background-color: #336E7B;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	padding: 30px 20px;
+	color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	margin: auto;
+}
+
+.achievement-lock{
+	background-color: #456066;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	padding: 30px 20px;
+	color: #B0B0B0;
+	margin: auto;
+	cursor:not-allowed;
+}
+
+.trophe {
+	font-size: 50px;
+	float: left;
+	margin-right: 30px;
+	margin-top: -20px;
+}
+
+h1 small {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+}
