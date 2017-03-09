@@ -9,12 +9,12 @@ PImage lave_haut;
 PImage lave_bas;
 PImage lave_droit;
 PImage lave_gauche;
-
+PImage foret;
 int partie_lancer=0;        // 1 lancer//  0 non lancer
 
 void setup()
 {
- size(500,500);
+ size(600,600);
  
          //Affectation des images a des noms
  Perso = loadImage("linkmarche.png");
@@ -29,6 +29,7 @@ void setup()
  lave_bas= loadImage("lave_bas.png");
  lave_droit= loadImage("lave_droit.png");
  lave_gauche= loadImage("lave_gauche.png");
+ foret= loadImage("foret.png");
  }
 
 void draw()
@@ -46,12 +47,11 @@ void draw()
    
     if(partie_lancer==1)
     {
-       level_1();
-       environnement_lvl_1();
-       //mondeDrawGRILLE();
-       ennemi();
+       level1();
+       mondeDrawGRILLE();
        position();
        deplacement();
+       ennemi();
        vie();
        
     }

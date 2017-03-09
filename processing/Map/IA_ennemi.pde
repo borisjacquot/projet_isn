@@ -7,7 +7,7 @@ void ennemi()
   int enVit=1;
   fill(255);
   rect(enX,enY,10,10);
-  fill(20,130,15,50);
+  fill(20,10,150,50);
   ellipse(enX+5,enY+5,endetect,endetect);      // <-- zone de detection
   
  if(persoX>(enX+5)-enRay && persoY>(enY+5)-enRay && persoX<enX+5 && persoY<enY+5)        // haut gauche ray detect
