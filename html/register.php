@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+
+<?php
+
+$bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
+if(isset($_POST['valier'])){
+	echo "ok";
+}
+
+?>
+
 <html>
 
 	<head>
@@ -37,7 +47,7 @@
 		
 		<div class="login" style="background-image: url('img/geo.png');">
 
-			<form>
+			<form method="POST">
 				<input type="text" name="pseudo" placeholder="Pseudo">
 				<input type="password" name="mdp" placeholder="Mot de passe">
 				<input type="password" name="mdp2" placeholder="Répéter le mot de passe">
