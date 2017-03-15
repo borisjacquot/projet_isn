@@ -1,6 +1,6 @@
         //Chargement et position initial du personnage
 PImage Perso;
-int persoX=100,persoY=100;
+int persoX=400,persoY=400;
 
 //Stats vie
 int vie=100;
@@ -14,7 +14,7 @@ boolean holdLeft = false;
 boolean holdUp = false;
 boolean holdDown = false;
 
-int persoVit=2;   // vitesse du personnage
+int persoVit=8;   // vitesse du personnage
 void keyPressed(){
   if(keyCode == RIGHT) {
     holdRight = true;

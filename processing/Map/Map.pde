@@ -4,11 +4,11 @@ PImage level1;
 
 void setup()
 {
- size(800,800);
+ size(1000,1000);
          //Affectation des images a des noms
  Perso = loadImage("linkmarche.png");
  MessMort = loadImage("MessMort.png");
- level1= loadImage("level1.png");
+ level1= loadImage("level1.jpg");
  }
 
 void draw()
@@ -30,7 +30,7 @@ void draw()
        mondeDrawGRILLE();
        position();
        deplacement();
-       ennemi();
+       //ennemi();
        vie();
        
     }
