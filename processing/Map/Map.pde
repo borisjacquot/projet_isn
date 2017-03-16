@@ -4,11 +4,13 @@ int ybox=500;      //hauteur boite  ( Mettre valeur Y de size()  )
 PImage level1;
 PImage level2;
 PImage level3;
+PImage menu;
 
 void setup()
 {
  size(800,800);
  
+ menu = loadImage("Menu.jpg");
  MessMort = loadImage("MessMort.png");
  Perso = loadImage("linkmarche.png");
  Perso.resize(30,30);
@@ -25,8 +27,7 @@ void draw()
   //Menu
   if(partie==0)
   {
-  background(0);
-  text("Appuyez ENTRER pour commencer",xbox/4,ybox/2);
+  image(menu,0,0);
   }
    if (keyPressed || partie==0)    //lancer partie 
    {
@@ -50,6 +51,14 @@ void draw()
     {
      level2();
      mondeDrawGRILLE2();
+     mort();
+     deplacement();
+     vie();
+    }
+    if(partie==3)
+    {
+     level3();
+     mondeDrawGRILLE3();
      mort();
      deplacement();
      vie();
