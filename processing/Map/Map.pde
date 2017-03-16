@@ -1,15 +1,21 @@
 int partie_lancer=0;        // 1 lancer//  0 non lancer
-
+int partie_deux_lancer=0;  // 1 lancer//  0 non lancer   
+int xbox=500;       //largeur boite ( Mettre valeur X de size()  )
+int ybox=500;      //hauteur boite  ( Mettre valeur Y de size()  )
 PImage level1;
+PImage level2;
 
 void setup()
 {
- size(1000,1000);
-         //Affectation des images a des noms
- Perso = loadImage("linkmarche.png");
+ size(800,800);
+ 
  MessMort = loadImage("MessMort.png");
- level1= loadImage("level1.jpg");
- }
+ Perso = loadImage("linkmarche.png");
+ Perso.resize(30,30);
+ level1=loadImage("level1.jpg");
+ level1.resize(800, 800);
+ level2=loadImage("level2.png");
+}
 
 void draw()
 {
@@ -20,7 +26,7 @@ void draw()
    {
    if (key == ENTER)
     {
-      partie_lancer=1;
+      partie_lancer=1;            
     }
    }
    
@@ -31,7 +37,13 @@ void draw()
        position();
        deplacement();
        //ennemi();
-       vie();
-       
+       vie();     
+    }
+      
+    if(persoY<100 && partie_lancer==1)
+    {
+     partie_lancer=0;  
+
+     
     }
  }

@@ -14,7 +14,7 @@ boolean holdLeft = false;
 boolean holdUp = false;
 boolean holdDown = false;
 
-int persoVit=8;   // vitesse du personnage
+int persoVit=5;   // vitesse du personnage
 void keyPressed(){
   if(keyCode == RIGHT) {
     holdRight = true;
@@ -35,22 +35,27 @@ void keyReleased() {
     {
       holdRight = false;
       Perso = loadImage("linkmarche.png");
+      Perso.resize(30,30);
     }
     if(keyCode ==LEFT && vie>0)
     {
       holdLeft = false;
       Perso = loadImage("linkmarchegauche.png");
+      Perso.resize(30,30);
     }
     if(keyCode == UP && vie>0)
     {
       holdUp = false;
       Perso = loadImage("linkmarchehaut.png");
+      Perso.resize(30,30);
     }
     if(keyCode ==DOWN && vie>0)
     {
       holdDown = false;
       Perso = loadImage("linkmarchebas.png");
+      Perso.resize(30,30);
     }
+    
 }
 
 void deplacement()
@@ -61,21 +66,25 @@ int pyAvant = persoY;
  {
     persoX=persoX+persoVit;
     Perso = loadImage("linkcours.png");
+    Perso.resize(30,30);
   }
       if(holdLeft && vie>0)
   {
     persoX=persoX-persoVit;
     Perso = loadImage("linkcoursgauche.png");
+    Perso.resize(30,30);
   }
       if(holdUp && vie>0)
   {
     persoY=persoY-persoVit;
     Perso = loadImage("linkcourshaut.png");
+    Perso.resize(30,30);
   }
       if(holdDown && vie>0)
   {
     persoY=persoY+persoVit;
     Perso = loadImage("linkcoursbas.png");
+      Perso.resize(30,30);
   } 
   int CarreauSousPerso = dessousperso(persoX,persoY);
   
