@@ -72,5 +72,3 @@ void ennemi()
    enX=enX+enVit; 
   }
 }
-
-

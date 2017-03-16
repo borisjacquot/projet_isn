@@ -1,16 +1,10 @@
-void level2()
+void level3()
 {
-  image(level2,0,0);
-  if(persoY<100)
-        {
-          partie=3;
-          persoX=400;
-          persoY=600;
-        }
+  image(level3,0,0);
 }
 
 
-int[][] mondeGRILLE2 = { 
+int[][] mondeGRILLE3 = { 
                       { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                       { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                       { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
@@ -34,14 +28,14 @@ int[][] mondeGRILLE2 = {
                       };
                       
 
-void mondeDrawGRILLE2() 
+void mondeDrawGRILLE3() 
 {
   noStroke();
-  for(int Rangee=0; Rangee<mondeGRILLE2.length; Rangee++) 
+  for(int Rangee=0; Rangee<mondeGRILLE3.length; Rangee++) 
     {
-      for(int Colonne=0;Colonne<mondeGRILLE2[Rangee].length;Colonne++) 
+      for(int Colonne=0;Colonne<mondeGRILLE3[Rangee].length;Colonne++) 
         {
-           switch(mondeGRILLE2[Rangee][Colonne]) 
+           switch(mondeGRILLE3[Rangee][Colonne]) 
           {
              case case_libre:
              fill(0,0,255,20);

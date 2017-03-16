@@ -99,7 +99,7 @@ int pyAvant = persoY;
   }
 }
 
-void position() 
+void mort() 
 {
   image(Perso,persoX-Perso.width,persoY-Perso.height);
   if (vie<=0)
@@ -120,10 +120,12 @@ void vie()
     image(MessMort,xbox/3,ybox/6); 
   }
   fill(0);
-  rect(10,80,40,50);
+  rect(10,80,90,60);
   fill(#ff0000);
   textSize(15);
   text("Vie",20,100);
-  text(barrevie,18,120);
+  text(barrevie,50,100);
+  text("Niveau :",20,130);
+  text(partie,80,130);
   
 }
