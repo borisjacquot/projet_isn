@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<?php 
+session_start();
+?>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>Accueil</title>
@@ -20,10 +24,10 @@
 
 				<div class="nav">
 					<ul>
-						<li class="active"><a href="index.html">Accueil</a></li>
+						<li class="active"><a href="index.php">Accueil</a></li>
 						<li><a href="login.php">Jeux</a></li>
-						<li><a href="classement.html">Classements</a></li>
-						<li><a href="auteurs.html">Auteurs</a></li>
+						<li><a href="classement.php">Classements</a></li>
+						<li><a href="auteurs.php">Auteurs</a></li>
 						<li class="icone"><a href="https://github.com/LemonAdd/projet_isn" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
@@ -96,6 +100,26 @@
 				<p class="txt" align="center">"The cake is a lie"</p>
 				<p class="nom">Portal, 2007</p>
 			</div>
+
+		</div>
+
+		<div class="user">
+
+			<?php
+				if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {	
+			?>	
+				<p>Connecté en tant que <?php echo $_SESSION['pseudo']; ?></p>
+				<a href="deco.php"><button>Déconnexion</button></a>
+			<?php
+				}
+				else {
+			?>
+				<p>Vous n'êtes pas connécté</p>
+				<a href="login.php"><button>Connexion</button></a>
+
+			<?php
+				}
+			?>
 
 		</div>
 

@@ -20,10 +20,10 @@
 
 				<div class="nav">
 					<ul>
-						<li><a href="index.html">Accueil</a></li>
+						<li><a href="index.php">Accueil</a></li>
 						<li class="active"><a href="login.php">Jeux</a></li>
-						<li><a href="classement.html">Classements</a></li>
-						<li><a href="auteurs.html">Auteurs</a></li>
+						<li><a href="classement.php">Classements</a></li>
+						<li><a href="auteurs.php">Auteurs</a></li>
 						<li class="icone"><a href="https://github.com/LemonAdd/projet_isn" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
@@ -42,16 +42,17 @@
 
 				session_start();
 				$bdd = new PDO('mysql:host=localhost;dbname=gamus', 'root', '');
+				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
 				
 				if(isset($_POST['valider1'])) {
 				
-					$mailco = htmlspecialchars($_POST['mailco']);
+					$pseudoco = htmlspecialchars($_POST['pseudoco']);
 					$mdpco = sha1($_POST['mdpco']);
 					
-					if(!empty($mailco) && !empty($mdpco)) {
+					if(!empty($pseudoco) && !empty($mdpco)) {
 					
-						$requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND motdepasse = ?");
-						$requser->execute(array($mailco, $mdpco));
+						$requser = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ? AND motdepasse = ?");
+						$requser->execute(array($pseudoco, $mdpco));
 						$userexist = $requser->rowCount();
 						if ($userexist == 1) {
 						
@@ -64,7 +65,7 @@
 							
 						}
 						else {
-							echo "Email ou mot de passe incorrect";
+							echo "Pseudo ou mot de passe incorrect";
 						}
 					
 					}
@@ -78,7 +79,7 @@
 		
 
 			<form method="POST">
-				<input type="email" name="mailco" placeholder="Mail">
+				<input type="text" name="pseudoco" placeholder="Pseudo">
 				<input type="password" name="mdpco" placeholder="Mot de passe">
 				<input type="submit" name="valider1" value="Se connecter">
 			</form>

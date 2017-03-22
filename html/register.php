@@ -41,6 +41,7 @@
 			<?php
 
 				$bdd = new PDO('mysql:host=localhost;dbname=gamus', 'root', '');
+				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
 
 				if (isset($_POST['valider'])) {
 				
@@ -51,16 +52,18 @@
 				
 					if (!empty($_POST['pseudo']) && !empty($_POST['mdp']) && !empty($_POST['mdp2']) && !empty($_POST['mail'])) {
 						
-						$pseudolength = strlen($pseudo);
+						$checkpseudo = $bdd->prepare("SELECT * FROM membres WHERE pseudo = ?");
+						$checkpseudo->execute(array($pseudo));
+						$pseudoexist = $checkpseudo->rowCount();
 						
-						if($pseudolength <= 255) {
+						if($pseudoexist == 0) {
 							if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 							
 								$checkemail = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
 								$checkemail->execute(array($mail));
 								$mailexist = $checkemail->rowCount();
 								
-								if(mailexist == 0) {
+								if($mailexist == 0) {
 							
 										if($mdp == $mdp2) {
 										
@@ -82,7 +85,7 @@
 							}
 						}
 						else {
-							echo "Votre pseudo ne doit pas contenir plus de 255 caractères";
+							echo "Ce pseudo est déjà utilisé";
 						}
 					}
 					else {

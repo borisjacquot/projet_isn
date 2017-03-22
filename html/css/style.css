@@ -380,7 +380,7 @@ button:hover {
 
 .avatar_membre {
 	border-radius: 50%;
-	width: auto;
+	width: 200px;
 	height:200px;
 	margin-top: 10px;
 	margin-bottom: -20px;
@@ -401,7 +401,7 @@ button:hover {
 
 
 .title {
-	background-color: #F39C12;
+	background-color: #22313F;
 	padding: 10px 40px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
@@ -444,4 +444,17 @@ h1 small {
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
 	font-weight: 300;
+}
+
+.user {
+	background-color: #22313F;
+	color: white;
+   	width: 250px;
+   	border-radius: 10px;
+  	position: fixed;
+   	top: 100%;
+   	margin: -180px auto 0 20px;
+   	padding-left: 10px;
+   	padding-right: 10px;
+   	font-family: 'Roboto', sans-serif;
 }
