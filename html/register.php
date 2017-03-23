@@ -21,10 +21,10 @@
 
 				<div class="nav">
 					<ul>
-						<li><a href="index.html">Accueil</a></li>
+						<li><a href="index.php">Accueil</a></li>
 						<li class="active"><a href="login.php">Jeux</a></li>
-						<li><a href="classement.html">Classements</a></li>
-						<li><a href="auteurs.html">Auteurs</a></li>
+						<li><a href="classement.php">Classements</a></li>
+						<li><a href="auteurs.php">Auteurs</a></li>
 						<li class="icone"><a href="https://github.com/LemonAdd/projet_isn" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
@@ -39,9 +39,14 @@
 		<div class="login" style="background-image: url('img/geo.png');">
 		
 			<?php
-
-				$bdd = new PDO('mysql:host=localhost;dbname=gamus', 'root', '');
-				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
+				session_start();
+			
+				$bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
+				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
+				
+				if (isset($_SESSION['id'])) {
+					header("Location: index.php");
+				}
 
 				if (isset($_POST['valider'])) {
 				
@@ -56,45 +61,63 @@
 						$checkpseudo->execute(array($pseudo));
 						$pseudoexist = $checkpseudo->rowCount();
 						
-						if($pseudoexist == 0) {
-							if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-							
-								$checkemail = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
-								$checkemail->execute(array($mail));
-								$mailexist = $checkemail->rowCount();
+						$verifpseudo = preg_match("#admin#i", "'.$pseudo.'");
+						
+						if ($verifpseudo == FALSE) {	
+						
+							if($pseudoexist == 0) {
+								if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 								
-								if($mailexist == 0) {
-							
-										if($mdp == $mdp2) {
-										
-											$inserer = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse) VALUES(?, ?, ?)");
-											$inserer->execute(array($pseudo, $mail, $mdp));
-											echo "Votre compte a bien été créé";
+									$checkemail = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
+									$checkemail->execute(array($mail));
+									$mailexist = $checkemail->rowCount();
+									
+									if($mailexist == 0) {
+								
+											if($mdp == $mdp2) {
 											
-										}
-										else {
-											echo "Les mots de passe doivent correspondre";
-										}
+												$inserer = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse) VALUES(?, ?, ?)");
+												$inserer->execute(array($pseudo, $mail, $mdp));
+												$oui = "Votre compte a bien été créé, <a href='login.php' style='color: #446CB3;'>Connectez vous</a>";
+												
+											}
+											else {
+												$msg = "Les mots de passe doivent correspondre";
+											}
+									}
+									else {
+										$msg = "Adresse mail déjà utilisée";
+									}
 								}
 								else {
-									echo "Adresse mail déjà utilisée";
+									$msg = "Votre adresse mail n'est pas valide";
 								}
 							}
 							else {
-								echo "Votre adresse mail n'est pas valide";
+								$msg = "Ce pseudo est déjà utilisé";
 							}
 						}
 						else {
-							echo "Ce pseudo est déjà utilisé";
+							$msg = "Pseudo non autorisé";
 						}
 					}
 					else {
-						echo "Tous les champs doivent être remplis";
+						$msg = "Tous les champs doivent être remplis";
 					}
 				}
 
 			?>
 
+			<?php
+			if (isset($msg)) { 
+				echo '<div class="alerte"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' . $msg . '</div>'; 
+			}
+			if (isset($oui)) { 
+				echo '<div class="oui"><i class="fa fa-check-circle" aria-hidden="true"></i> ' . $oui . '</div>'; 
+			}
+			?>
+			
+			
 			<form method="POST">
 				<input type="text" name="pseudo" placeholder="Pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>">
 				<input type="password" name="mdp" placeholder="Mot de passe">

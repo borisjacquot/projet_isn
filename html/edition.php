@@ -2,8 +2,8 @@
 
 <?php 
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=gamus', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
+$bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
+# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 
 if (isset($_SESSION['id'])) {
 	$requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
@@ -64,7 +64,14 @@ if (isset($_SESSION['id'])) {
 
 	if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
 		$taillemax = 2097152;
-		$extension = array('jpg', 'jpeg', 'gif', 'png');
+		
+		
+		if ($user['admin'] == 1) {
+			$extension = array('jpg', 'jpeg', 'gif', 'png');
+		}
+		else {
+			$extension = array('jpg', 'jpeg', 'png');
+		}
 
 		if ($_FILES['avatar']['size'] <= $taillemax) {
 			$extensionupload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
@@ -85,7 +92,7 @@ if (isset($_SESSION['id'])) {
 				}
 			}
 			else {
-				$msg = "Votre avatar doit être au format jpg, jpeg, gif ou png";
+				$msg = "Le format de votre avatar n'est pas autorisé";
 			}
 		}
 		else {
@@ -148,7 +155,7 @@ if (isset($_SESSION['id'])) {
 		<p>
 		<?php 
 		if (isset($msg)) { 
-			echo $msg; 
+			echo '<div class="alerte"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' . $msg . '</div>'; 
 		} 
 		?>
 			

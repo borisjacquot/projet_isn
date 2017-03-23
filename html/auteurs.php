@@ -44,19 +44,19 @@ session_start();
 			<hr style="margin-bottom: 50px;">
 
 			<div class="auteur" style="background-image: url('img/bobo.jpg');background-position:bottom;">
-				<h2>Boris Jacquot <span class="label" style="background-image: url('img/geo.png');">Web design<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span></h2>
+				<h2><a href="membre.php?id=5">Boris Jacquot</a> <span class="label" style="background-image: url('img/geo.png');">Web design<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span></h2>
 			</div>
 
 			<div class="auteur" style="background-image: url('img/clem.jpg');background-position:bottom;">
-				<h2>Clément Millard <span class="label" style="background-image: url('img/geo.png');">Game design<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span></h2>
+				<h2><a href="membre.php?id=6">Clément Millard</a> <span class="label" style="background-image: url('img/geo.png');">Game design<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span></h2>
 			</div>
 
 			<div class="auteur" style="background-image: url('img/nico.jpg');background-position:bottom;">
-				<h2>Nicolas Bouzon <span class="label" style="background-image: url('img/geo.png');">Level design<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span></h2>
+				<h2><a href="membre.php?id=7">Nicolas Bouzon</a> <span class="label" style="background-image: url('img/geo.png');">Level design<a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span></h2>
 			</div>
 
 			<div class="auteur" style="background-image: url('img/ava.png');">
-				<h2>Avanise <span class="label" style="background-image: url('img/geo.png');">Graphiste<a href="#"><i class="fa fa-deviantart" aria-hidden="true"></i></a><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></span></h2>
+				<h2><a href="#">Avanise</a> <span class="label" style="background-image: url('img/geo.png');">Graphiste<a href="#"><i class="fa fa-deviantart" aria-hidden="true"></i></a><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></span></h2>
 			</div>
 
 			<hr style="margin-top: 50px;">
@@ -73,7 +73,7 @@ session_start();
 				}
 				else {
 			?>
-				<p>Vous n'êtes pas connécté</p>
+				<p>Vous n'êtes pas connecté</p>
 				<a href="login.php"><button>Connexion</button></a>
 
 			<?php

@@ -2,14 +2,15 @@
 
 <?php 
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=gamus', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
+$bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
+# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 
 if (isset($_GET['id']) && $_GET['id'] > 0) {
 	$getid = intval($_GET['id']);
 	$requser = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
 	$requser->execute(array($getid));
 	$userinfo = $requser->fetch();
+if (isset($userinfo['id'])) {
 
 ?>
 
@@ -72,16 +73,35 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 					}
 				?>
 			</center>
+			
+			<?php
+			if ($userinfo['admin'] == 1){
+				$color = "446CB3";
+			}
+			else {
+				$color = "22313F";
+			}
+			
+			?>
+			
 
 			<center>
-				<span class="title" style="background-image: url(img/gplay.png);"><?php echo $userinfo['pseudo']; ?></span>
+				<span class="title" style="background-image: url(img/gplay.png);background-color: #<?php echo $color; ?>;"><?php echo $userinfo['pseudo']; ?></span>
 			</center>
 
-			
 			<h1>Succès <small>Vous avez débloqué <b><?php echo $userinfo['achiev_nb']; ?></b> succès.</small></h1>
 			<hr>
 			
 			<div class="row" style="margin: 0 10%; padding-left: 5%;">
+					<?php
+						if ($userinfo['admin'] == 1) {
+					?>
+					<div class="col-5">
+						<div class="achievement" style="background-image: url(img/gplay.png);background-color: #F64747;"><div class="trophe"><i class="fa fa-address-card" aria-hidden="true"></i></div>Administrateur</div>
+					</div>
+					<?php
+						}
+					?>
 				<div class="col-5">
 					<?php
 						if ($userinfo['achiev_beta'] == 1) {
@@ -118,7 +138,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 				}
 				else {
 			?>
-				<p>Vous n'êtes pas connécté</p>
+				<p>Vous n'êtes pas connecté</p>
 				<a href="login.php"><button>Connexion</button></a>
 
 			<?php
@@ -130,4 +150,12 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 	</body>
 </html>
 
-<?php } ?>
+<?php
+}
+else {
+	echo "Erreur";
+} 
+} 
+else {
+	echo "Erreur";
+}?>

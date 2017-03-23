@@ -41,8 +41,12 @@
 			<?php
 
 				session_start();
-				$bdd = new PDO('mysql:host=localhost;dbname=gamus', 'root', '');
-				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus', 'u154661693_admin', 'admin51');
+				$bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
+				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
+				
+				if (isset($_SESSION['id'])) {
+					header("Location: index.php");
+				}
 				
 				if(isset($_POST['valider1'])) {
 				
@@ -65,19 +69,23 @@
 							
 						}
 						else {
-							echo "Pseudo ou mot de passe incorrect";
+							$msg = "Pseudo ou mot de passe incorrect";
 						}
 					
 					}
 					else {
-						echo "Veuillez renseigner tous les champs";
+						$msg = "Veuillez renseigner tous les champs";
 					}
 				
 				}
 
+				if (isset($msg)) {
+				echo '<div class="alerte"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' . $msg . '</div>';
+				}
+				
 			?>
 		
-
+		
 			<form method="POST">
 				<input type="text" name="pseudoco" placeholder="Pseudo">
 				<input type="password" name="mdpco" placeholder="Mot de passe">

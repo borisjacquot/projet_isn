@@ -114,7 +114,7 @@ session_start();
 				}
 				else {
 			?>
-				<p>Vous n'êtes pas connécté</p>
+				<p>Vous n'êtes pas connecté</p>
 				<a href="login.php"><button>Connexion</button></a>
 
 			<?php
