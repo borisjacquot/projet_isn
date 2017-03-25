@@ -27,6 +27,13 @@ session_start();
 						<li><a href="login.php">Jeux</a></li>
 						<li><a href="classement.php">Classements</a></li>
 						<li class="active"><a href="auteurs.php">Auteurs</a></li>
+						<?php 
+							if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+						?>
+						<li><a href="admin" style="color: #F64747;">Administration</a></li>
+						<?php
+							}
+						?>
 						<li class="icone"><a href="https://github.com/LemonAdd/projet_isn" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
@@ -67,7 +74,7 @@ session_start();
 			<?php
 				if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {	
 			?>	
-				<p>Connecté en tant que <?php echo $_SESSION['pseudo']; ?></p>
+				<p>Connecté en tant que <?php echo $_SESSION['pseudo']; ?> <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><span class="label" style="margin-left: 101px">Profil</span></a></p>
 				<a href="deco.php"><button>Déconnexion</button></a>
 			<?php
 				}

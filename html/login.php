@@ -64,6 +64,7 @@
 							$_SESSION['id'] = $userinfo['id'];
 							$_SESSION['mail'] = $userinfo['mail'];
 							$_SESSION['pseudo'] = $userinfo['pseudo'];
+							$_SESSION['admin'] = $userinfo['admin'];
 							header("Location: membre.php?id=" . $_SESSION['id']);
 							
 							

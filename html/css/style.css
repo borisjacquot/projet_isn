@@ -297,17 +297,6 @@ button:hover {
 	color: white;
 }
 
-.avatar {
-	border-radius: 50%;
-	width: auto;
-	height:125px;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-	transition: 0.3s;
-}
-.avatar:hover {
-	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
-}
-
 .score {
 	background-color: #336E7B;
 	padding: 27px 50px;
@@ -316,7 +305,7 @@ button:hover {
 	transition: 0.3s;
 }
 
-.score .label {
+.label {
 	background-color: #47b475;
 	color: white;
 	margin-left: 100px;
@@ -325,7 +314,7 @@ button:hover {
 	transition: 0.3s;
 }
 
-.score .label:hover {
+.label:hover {
 	box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24);
 }
 .score:hover {
@@ -384,6 +373,7 @@ button:hover {
 	height:200px;
 	margin-top: 10px;
 	margin-bottom: -20px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 

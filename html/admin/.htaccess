@@ -1,0 +1,4 @@
+AuthName "Contenu prive"
+AuthType Basic
+AuthUserFile "C:\wamp64\www\isn\admin\.htpasswd"
+Require valid-user

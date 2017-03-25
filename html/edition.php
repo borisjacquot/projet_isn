@@ -128,6 +128,13 @@ if (isset($_SESSION['id'])) {
 						<li><a href="login.php">Jeux</a></li>
 						<li><a href="classement.php">Classements</a></li>
 						<li><a href="auteurs.php">Auteurs</a></li>
+						<?php 
+							if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+						?>
+						<li><a href="admin" style="color: #F64747;">Administration</a></li>
+						<?php
+							}
+						?>
 						<li class="icone"><a href="https://github.com/LemonAdd/projet_isn" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
