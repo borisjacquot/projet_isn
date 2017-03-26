@@ -78,6 +78,7 @@
 											
 												$inserer = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse) VALUES(?, ?, ?)");
 												$inserer->execute(array($pseudo, $mail, $mdp));
+
 												$oui = "Votre compte a bien été créé, <a href='login.php' style='color: #446CB3;'>Connectez vous</a>";
 												
 											}

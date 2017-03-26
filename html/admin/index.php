@@ -32,15 +32,113 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 <head>
 	<title>Administration</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="../css/font-awesome.min.css" />
 </head>
 <body>
 
-<h1>Derniers membres</h1>
+
+<div class="header" style="background-image: url(../img/gplay.png);">Administration</div>
+
+<div class="nav">
+
+	<div class="profil" style="background-image: url(../img/gplay.png);">
+		<div class="avatar" style="background-image:url(../membres/avatars/<?php echo $_SESSION['avatar']; ?>); background-size: cover;"></div><div class="nom"><b><?php echo $_SESSION['pseudo']; ?></b></div>
+	</div>
 	<ul>
-		<?php while($m = $membres->fetch()) { ?>
-		<li><?php echo $m['id']; ?> : <a href="/isn/membre.php?id=<?php echo $m['id']; ?>"><?php echo $m['pseudo']; ?></a><?php if($m['restricted'] == 0) { ?> - <a href="index.php?restricted=<?php echo $m['id']; ?>">Mode restreint</a><?php } ?><?php if($m['restricted'] == 1) { ?> - <a href="index.php?unrestricted=<?php echo $m['id']; ?>">Désactiver mode restreint</a><?php } ?>- <a href="index.php?ban=<?php echo $m['id']; ?>">Bannir</a></li>
-		<?php } ?>
+		<li class="active">
+			<a href="#">
+				<span><i class="fa fa-tachometer" aria-hidden="true"></i></span>
+				<span>Dashboard</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span><i class="fa fa-wrench" aria-hidden="true"></i></span>
+				<span>Réglages</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span><i class="fa fa-address-book" aria-hidden="true"></i></span>
+				<span>Membres</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span><i class="fa fa-trophy" aria-hidden="true"></i></span>
+				<span>Concours</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<span><i class="fa fa-cogs" aria-hidden="true"></i></span>
+				<span>Statut du site</span>
+			</a>
+		</li>
+		<li>
+			<a href="/">
+				<span><i class="fa fa-power-off" aria-hidden="true"></i></span>
+				<span>Retour au site</span>
+			</a>
+		</li>
 	</ul>
+</div>
+
+
+<div class="contenu">
+
+<?php
+	$compter = $bdd->prepare("SELECT * FROM membres");
+	$compter->execute();
+	$nombre = $compter->rowCount();
+?>
+
+<div class="row">
+	<div class="col-3">
+		<div class="cadre" style="background-image: url(../img/gplay.png);">
+			<div class="logo"><i class="fa fa-address-book" aria-hidden="true"></i></div>
+			<b><?php echo $nombre; ?></b> membres
+		</div>
+	</div>
+	<div class="col-3">
+		<div class="cadre" style="background-image: url(../img/gplay.png);">
+			<div class="logo"><i class="fa fa-gamepad" aria-hidden="true"></i></div>
+			<b>0</b> jeux en ligne
+		</div>
+	</div>
+	<div class="col-3">
+		<div class="cadre" style="background-image: url(../img/gplay.png);">
+			<div class="logo"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+			<b>0</b> concours créés
+		</div>
+	</div>
+	<div class="col-3">
+		<div class="cadre" style="background-image: url(../img/gplay.png);">
+			<div class="logo"><i class="fa fa-plug" aria-hidden="true"></i></div>
+			<b>0</b> membres en ligne
+		</div>
+	</div>
+
+</div>
+
+<h1>Derniers membres</h1>
+
+
+<table>
+	<tr style="background-image: url(../img/gplay.png);">
+		<th width="50px">#</th>
+		<th width="25%">Pseudo</th>
+		<th>Action</th>
+	</tr>
+	<?php while($m = $membres->fetch()) { ?>
+	<tr>
+		<td width="50px"><?php echo $m['id']; ?></td>
+		<td><a href="../membre.php?id=<?php echo $m['id']; ?>"><?php echo $m['pseudo']; ?></a></td>
+		<td><?php if($m['restricted'] == 0) { ?><a href="index.php?restricted=<?php echo $m['id']; ?>">Mode restreint</a><?php } ?><?php if($m['restricted'] == 1) { ?><a href="index.php?unrestricted=<?php echo $m['id']; ?>">Désactiver mode restreint</a><?php } ?> - <a href="index.php?ban=<?php echo $m['id']; ?>">Bannir</a></td>
+	</tr>
+	<?php } ?>
+</table>
 
 <h1>Modifier un membre</h1>
 
@@ -56,7 +154,7 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 	<label>ID : </label><input type="text" name="idmodif"><input type="submit" name="valider">
 </form>
 
-<p>Oui y'a pas de CSS, j'avais trop la flemme je le ferais plus tard.</p>
+</div>
 
 </body>
 </html>
