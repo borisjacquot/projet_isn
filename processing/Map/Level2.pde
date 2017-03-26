@@ -1,7 +1,7 @@
 void level2()
 {
-  image(level2,0,0);
-  if(persoY<100)
+  image(level1,0,0);
+  if(persoX>400 && persoX<440 && persoY<177)
         {
           partie=3;
           persoX=400;

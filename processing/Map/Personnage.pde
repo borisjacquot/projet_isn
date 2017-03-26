@@ -14,7 +14,7 @@ boolean holdLeft = false;
 boolean holdUp = false;
 boolean holdDown = false;
 
-int persoVit=5;   // vitesse du personnage
+int persoVit=2;   // vitesse du personnage
 void keyPressed(){
   if(keyCode == RIGHT) {
     holdRight = true;
