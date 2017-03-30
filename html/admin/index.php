@@ -59,7 +59,7 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="modif.php">
 				<span><i class="fa fa-address-book" aria-hidden="true"></i></span>
 				<span>Membres</span>
 			</a>
@@ -135,24 +135,10 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 	<tr>
 		<td width="50px"><?php echo $m['id']; ?></td>
 		<td><a href="../membre.php?id=<?php echo $m['id']; ?>"><?php echo $m['pseudo']; ?></a></td>
-		<td><?php if($m['restricted'] == 0) { ?><a href="index.php?restricted=<?php echo $m['id']; ?>">Mode restreint</a><?php } ?><?php if($m['restricted'] == 1) { ?><a href="index.php?unrestricted=<?php echo $m['id']; ?>">Désactiver mode restreint</a><?php } ?> - <a href="index.php?ban=<?php echo $m['id']; ?>">Bannir</a></td>
+		<td><?php if($m['restricted'] == 0) { ?><a class="btn-red" href="index.php?restricted=<?php echo $m['id']; ?>"><i class="fa fa-fire" aria-hidden="true"></i> Mode restreint</a><?php } ?><?php if($m['restricted'] == 1) { ?><a class="btn-green" href="index.php?unrestricted=<?php echo $m['id']; ?>"><i class="fa fa-check" aria-hidden="true"></i> Désactiver mode restreint</a><?php } ?> <a class="btn-red" href="index.php?ban=<?php echo $m['id']; ?>"><i class="fa fa-gavel" aria-hidden="true"></i> Bannir</a> <a class="btn-green" href="modif.php?id=<?php echo $m['id'] ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier le membre</a> <a target="_blank" class="btn-blue" href="../membre.php?id=<?php echo $m['id'] ?>"><i class="fa fa-external-link" aria-hidden="true"></i> Profil</a></td>
 	</tr>
 	<?php } ?>
 </table>
-
-<h1>Modifier un membre</h1>
-
-<?php 
-
-	if (isset($_POST['valider']) && !empty($_POST['idmodif'])) {
-		header("Location: modif.php?id=" . $_POST['idmodif']);
-	}
-
-?>
-
-<form method="POST">
-	<label>ID : </label><input type="text" name="idmodif"><input type="submit" name="valider">
-</form>
 
 </div>
 
