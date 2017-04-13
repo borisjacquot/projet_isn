@@ -78,7 +78,7 @@ int pyAvant = persoY;
     persoY=persoY+persoVit;
     Perso = loadImage("persobas1.png");
   } 
-  int CarreauSousPerso = dessousperso(persoX,persoY);
+  int CarreauSousPerso = dessousperso(persoX-25,persoY-10);
   
   if(CarreauSousPerso == case_mur)
   {
