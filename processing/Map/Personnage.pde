@@ -34,26 +34,22 @@ void keyReleased() {
   if(keyCode == RIGHT && vie>0)
     {
       holdRight = false;
-      Perso = loadImage("linkmarche.png");
-      Perso.resize(30,30);
+      Perso = loadImage("persodroite2.png");
     }
     if(keyCode ==LEFT && vie>0)
     {
       holdLeft = false;
-      Perso = loadImage("linkmarchegauche.png");
-      Perso.resize(30,30);
+      Perso = loadImage("persogauche2.png");
     }
     if(keyCode == UP && vie>0)
     {
       holdUp = false;
-      Perso = loadImage("linkmarchehaut.png");
-      Perso.resize(30,30);
+      Perso = loadImage("persohaut2.png");
     }
     if(keyCode ==DOWN && vie>0)
     {
       holdDown = false;
-      Perso = loadImage("linkmarchebas.png");
-      Perso.resize(30,30);
+      Perso = loadImage("persobas2.png");
     }
     
 }
@@ -65,26 +61,22 @@ int pyAvant = persoY;
  if(holdRight && vie>0)
  {
     persoX=persoX+persoVit;
-    Perso = loadImage("linkcours.png");
-    Perso.resize(30,30);
+    Perso = loadImage("persodroite1.png");
   }
       if(holdLeft && vie>0)
   {
     persoX=persoX-persoVit;
-    Perso = loadImage("linkcoursgauche.png");
-    Perso.resize(30,30);
+    Perso = loadImage("persogauche1.png");
   }
       if(holdUp && vie>0)
   {
     persoY=persoY-persoVit;
-    Perso = loadImage("linkcourshaut.png");
-    Perso.resize(30,30);
+    Perso = loadImage("persohaut1.png");
   }
       if(holdDown && vie>0)
   {
     persoY=persoY+persoVit;
-    Perso = loadImage("linkcoursbas.png");
-      Perso.resize(30,30);
+    Perso = loadImage("persobas1.png");
   } 
   int CarreauSousPerso = dessousperso(persoX,persoY);
   

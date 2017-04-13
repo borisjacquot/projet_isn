@@ -11,10 +11,9 @@ void setup()
  size(800,800);
 
  
- menu = loadImage("Menu.jpg");
+ menu = loadImage("menu.png");
  MessMort = loadImage("MessMort.png");
- Perso = loadImage("linkmarche.png");
- Perso.resize(30,30);
+ Perso = loadImage("persobas2.png");
  level1=loadImage("level1.jpg");
  level1.resize(800, 800);
  level2=loadImage("level2.jpg");
