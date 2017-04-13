@@ -1,6 +1,6 @@
 int partie=0;    
-int xbox=500;       //largeur boite ( Mettre valeur X de size()  )
-int ybox=500;      //hauteur boite  ( Mettre valeur Y de size()  )
+int xbox=800;       //largeur boite ( Mettre valeur X de size()  )
+int ybox=800;      //hauteur boite  ( Mettre valeur Y de size()  )
 PImage level1;
 PImage level2;
 PImage level3;

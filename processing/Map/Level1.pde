@@ -12,7 +12,7 @@ void level1()
   image(level1,0,0);
    text(mouseX,mouseX+20,mouseY);
  text(mouseY,mouseX+20,mouseY+40);
-    if(410<persoX && persoX<440 && persoY<185)
+    if(410<persoX && persoX<460 && persoY<200)
         {
           partie=2;
           persoX=400;
