@@ -1,6 +1,6 @@
         //Chargement et position initial du personnage
 PImage Perso;
-int persoX=400,persoY=400;
+int persoX=440,persoY=700;
 
 //Stats vie
 int vie=100;
