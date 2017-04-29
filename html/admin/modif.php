@@ -124,7 +124,7 @@ if (isset($userinfo['id'])) {
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="jeux.php">
 				<span><i class="fa fa-wrench" aria-hidden="true"></i></span>
 				<span>Réglages</span>
 			</a>

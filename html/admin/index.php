@@ -53,7 +53,7 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="jeux.php">
 				<span><i class="fa fa-wrench" aria-hidden="true"></i></span>
 				<span>Réglages</span>
 			</a>

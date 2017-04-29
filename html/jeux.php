@@ -3,6 +3,14 @@
 
 <?php 
 session_start();
+
+if (!isset($_SESSION['id'])) {
+	header("Location: login.php");
+}
+
+$bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
+
+$jeu = $bdd->query('SELECT * FROM jeux ORDER BY id DESC LIMIT 0,50');
 ?>
 
 	<head>
@@ -24,8 +32,8 @@ session_start();
 
 				<div class="nav">
 					<ul>
-						<li class="active"><a href="index.php">Accueil</a></li>
-						<li><a href="login.php">Jeux</a></li>
+						<li><a href="index.php">Accueil</a></li>
+						<li class="active"><a href="login.php">Jeux</a></li>
 						<li><a href="classement.php">Classements</a></li>
 						<li><a href="auteurs.php">Auteurs</a></li>
 						<?php 
@@ -52,9 +60,20 @@ session_start();
 			<hr>
 
 			<div class="row">
-
-				<p>Aucun jeu pour le moment</p>
-
+				<?php while($m = $jeu->fetch()) { ?>
+					<div class="col-4">
+						<div class="cadre">
+							<img src="img/jeux/<?php echo $m['img']; ?>">
+							<div class="contenu">
+						   		<?php if($m['actif'] == 1) { ?>
+						   			<a href="<?php echo "jeux/" . $m['id'] . ".php"; ?>"><button style="background-color: #3FC380;"><?php echo $m['nom']; ?></button></a>
+						   		<?php } else { ?>
+						   			<button style="background-color: #F64747;">Désactivé</button>
+						   		<?php } ?>
+					   		</div>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 
 

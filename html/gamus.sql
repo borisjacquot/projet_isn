@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 26 Mars 2017 à 16:22
+-- Généré le :  Sam 29 Avril 2017 à 09:16
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `gamus`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `jeux`
+--
+
+CREATE TABLE `jeux` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `actif` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `jeux`
+--
+
+INSERT INTO `jeux` (`id`, `nom`, `img`, `actif`) VALUES
+(1, 'La grande joie', '1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -62,6 +82,12 @@ INSERT INTO `membres` (`id`, `admin`, `restricted`, `restricted_raison`, `pseudo
 --
 
 --
+-- Index pour la table `jeux`
+--
+ALTER TABLE `jeux`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `membres`
 --
 ALTER TABLE `membres`
@@ -71,6 +97,11 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour les tables exportées
 --
 
+--
+-- AUTO_INCREMENT pour la table `jeux`
+--
+ALTER TABLE `jeux`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --

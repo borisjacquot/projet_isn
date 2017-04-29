@@ -45,7 +45,7 @@
 				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 				
 				if (isset($_SESSION['id'])) {
-					header("Location: index.php");
+					header("Location: jeux.php");
 				}
 				
 				if(isset($_POST['valider1'])) {
