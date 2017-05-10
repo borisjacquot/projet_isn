@@ -112,12 +112,10 @@ void vie()
     image(MessMort,xbox/3,ybox/6); 
   }
   fill(0);
-  rect(10,80,90,60);
+  rect(10,100,80,30);  //box vie
   fill(#ff0000);
   textSize(15);
-  text("Vie",20,100);
-  text(barrevie,50,100);
-  text("Niveau :",20,130);
-  text(partie,80,130);
+  text("Vie",20,120);
+  text(barrevie,50,120);
   
 }

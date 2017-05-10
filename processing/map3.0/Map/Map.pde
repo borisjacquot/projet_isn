@@ -8,7 +8,6 @@ void setup()
 {
  size(800,800);
 
- 
  menu = loadImage("menu.png");
  Perso = loadImage("persobas2.png");
  level1=loadImage("level1.jpg");
