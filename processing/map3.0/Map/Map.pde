@@ -4,10 +4,11 @@ int ybox=800;      //hauteur boite  ( Mettre valeur Y de size()  )
 PImage level1;
 PImage menu;
 
+
 void setup()
 {
  size(800,800);
-
+ 
  menu = loadImage("menu.png");
  Perso = loadImage("persobas2.png");
  level1=loadImage("level1.jpg");
