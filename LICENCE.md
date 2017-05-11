@@ -1,6 +1,6 @@
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
 
- Copyright (C) 2017 Jacquot Millard Bouzon Corporation 
+ Copyright (C) 2017 GAMUS
 
  Everyone is permitted to copy and distribute verbatim or modified 
  copies of this license document, and changing it is allowed as long 
