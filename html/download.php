@@ -10,7 +10,12 @@ if (!isset($_SESSION['id'])) {
 
 $bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
 
-$jeu = $bdd->query('SELECT * FROM jeux ORDER BY id DESC LIMIT 0,50');
+if (isset($_GET['id']) && $_GET['id'] > 0) {
+	$getid = intval($_GET['id']);
+	$reqjeu = $bdd->prepare('SELECT * FROM jeux WHERE id = ?');
+	$reqjeu->execute(array($getid));
+	$jeu = $reqjeu->fetch();
+if (isset($jeu['id'])) {
 ?>
 
 	<head>
@@ -54,26 +59,14 @@ $jeu = $bdd->query('SELECT * FROM jeux ORDER BY id DESC LIMIT 0,50');
 
 		<div class="page">
 
-			<h1>Choisissez votre jeu</h1>
+			<h1>Télécharger <small><?php echo $jeu['nom']; ?></small></h1>
 
 			<hr>
 
-			<div class="row">
-				<?php while($m = $jeu->fetch()) { ?>
-					<div class="col-4">
-						<div class="cadre">
-							<img src="img/jeux/<?php echo $m['img']; ?>">
-							<div class="contenu">
-						   		<?php if($m['actif'] == 1) { ?>
-						   			<a href="<?php echo "download.php?id=" . $m['id'] . ".php"; ?>"><button style="background-color: #3FC380;"><?php echo $m['nom']; ?></button></a>
-						   		<?php } else { ?>
-						   			<button style="background-color: #F64747;">Désactivé</button>
-						   		<?php } ?>
-					   		</div>
-						</div>
-					</div>
-				<?php } ?>
-			</div>
+		<center>
+			<div style="padding: 0 20% 0 20%;"><a href="dl.php?id=<?php echo $jeu['id']; ?>"><button><i class="fa fa-download" aria-hidden="true"></i> Télécharger</button></a></div>
+			<p>Déjà <b><?php echo $jeu['dl']; ?></b> téléchargements!</p>
+		</center>
 
 
 		</div>
@@ -100,4 +93,5 @@ $jeu = $bdd->query('SELECT * FROM jeux ORDER BY id DESC LIMIT 0,50');
 
 
 	</body>
+	<?php } } else { echo "Erreur"; }?>
 </html>

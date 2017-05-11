@@ -3,7 +3,6 @@
 <?php 
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 
 if (isset($_GET['id']) && $_GET['id'] > 0) {
 	$getid = intval($_GET['id']);
@@ -37,7 +36,6 @@ if (isset($userinfo['id'])) {
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
 						<li><a href="login.php">Jeux</a></li>
-						<li><a href="classement.php">Classements</a></li>
 						<li><a href="auteurs.php">Auteurs</a></li>
 						<?php 
 							if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
@@ -172,7 +170,7 @@ if (isset($userinfo['id'])) {
 			<?php
 				if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {	
 			?>	
-				<p>Connecté en tant que <?php echo $_SESSION['pseudo']; ?> <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><span class="label" style="margin-left: 101px">Profil</span></a></p>
+				<p>Connecté en tant que <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['pseudo']; ?></a></p>
 				<a href="deco.php"><button>Déconnexion</button></a>
 			<?php
 				}

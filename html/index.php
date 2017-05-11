@@ -26,7 +26,6 @@ session_start();
 					<ul>
 						<li class="active"><a href="index.php">Accueil</a></li>
 						<li><a href="login.php">Jeux</a></li>
-						<li><a href="classement.php">Classements</a></li>
 						<li><a href="auteurs.php">Auteurs</a></li>
 						<?php 
 							if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
@@ -43,9 +42,9 @@ session_start();
 		</div>
 
 
-		<!-- LE LOGO SERA ICI -->
+		<img src="img/logo.png" style="margin-top: 10%; display: block; margin-left: auto; margin-right: auto;">
 
-		<div class="page">
+		<div class="page" style="margin-top: 0;">
 
 			<h1 align="center">Bienvenue sur GamUs</h1>
 			<hr>
@@ -80,7 +79,7 @@ session_start();
 			<?php
 				if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {	
 			?>	
-				<p>Connecté en tant que <?php echo $_SESSION['pseudo']; ?> <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><span class="label" style="margin-left: 101px">Profil</span></a></p>
+				<p>Connecté en tant que <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['pseudo']; ?></a></p>
 				<a href="deco.php"><button>Déconnexion</button></a>
 			<?php
 				}

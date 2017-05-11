@@ -3,7 +3,6 @@
 <?php 
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 
 if (isset($_SESSION['id'])) {
 	$requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");

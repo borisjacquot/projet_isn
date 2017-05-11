@@ -3,7 +3,6 @@
 <?php 
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 
 $score = $bdd->query('SELECT * FROM membres ORDER BY score DESC LIMIT 0,10');
 
@@ -105,7 +104,7 @@ $score = $bdd->query('SELECT * FROM membres ORDER BY score DESC LIMIT 0,10');
 			<?php
 				if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) {	
 			?>	
-				<p>Connecté en tant que <?php echo $_SESSION['pseudo']; ?> <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><span class="label" style="margin-left: 101px">Profil</span></a></p>
+				<p>Connecté en tant que <a href="membre.php?id=<?php echo $_SESSION['id']; ?>"><?php echo $_SESSION['pseudo']; ?></a></p>
 				<a href="deco.php"><button>Déconnexion</button></a>
 			<?php
 				}

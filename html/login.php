@@ -22,7 +22,6 @@
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
 						<li class="active"><a href="login.php">Jeux</a></li>
-						<li><a href="classement.php">Classements</a></li>
 						<li><a href="auteurs.php">Auteurs</a></li>
 						<li class="icone"><a href="https://github.com/LemonAdd/projet_isn" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 					</ul>
@@ -42,7 +41,6 @@
 
 				session_start();
 				$bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
-				# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 				
 				if (isset($_SESSION['id'])) {
 					header("Location: jeux.php");
