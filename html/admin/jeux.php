@@ -2,7 +2,6 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 $jeux = $bdd->query('SELECT * FROM jeux ORDER BY id DESC LIMIT 0,50');
 
 if (isset($_GET['actif']) && !empty($_GET['actif'])) {
@@ -52,18 +51,6 @@ if (isset($_GET['desac']) && !empty($_GET['desac'])) {
 			<a href="modif.php">
 				<span><i class="fa fa-address-book" aria-hidden="true"></i></span>
 				<span>Membres</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<span><i class="fa fa-trophy" aria-hidden="true"></i></span>
-				<span>Concours</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<span><i class="fa fa-cogs" aria-hidden="true"></i></span>
-				<span>Statut du site</span>
 			</a>
 		</li>
 		<li>

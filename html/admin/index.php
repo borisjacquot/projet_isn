@@ -2,7 +2,6 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=gamus;charset=utf8', 'root', '');
-# $bdd = new PDO('mysql:host=mysql.hostinger.fr;dbname=u154661693_gamus;charset=utf8', 'u154661693_admin', 'admin51');
 
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] != 1) {
 	exit();
@@ -65,18 +64,6 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<span><i class="fa fa-trophy" aria-hidden="true"></i></span>
-				<span>Concours</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<span><i class="fa fa-cogs" aria-hidden="true"></i></span>
-				<span>Statut du site</span>
-			</a>
-		</li>
-		<li>
 			<a href="/">
 				<span><i class="fa fa-power-off" aria-hidden="true"></i></span>
 				<span>Retour au site</span>
@@ -105,18 +92,6 @@ $membres = $bdd->query('SELECT * FROM membres ORDER BY id DESC LIMIT 0,50');
 		<div class="cadre" style="background-image: url(../img/gplay.png);">
 			<div class="logo"><i class="fa fa-gamepad" aria-hidden="true"></i></div>
 			<b>0</b> jeux en ligne
-		</div>
-	</div>
-	<div class="col-3">
-		<div class="cadre" style="background-image: url(../img/gplay.png);">
-			<div class="logo"><i class="fa fa-trophy" aria-hidden="true"></i></div>
-			<b>0</b> concours créés
-		</div>
-	</div>
-	<div class="col-3">
-		<div class="cadre" style="background-image: url(../img/gplay.png);">
-			<div class="logo"><i class="fa fa-plug" aria-hidden="true"></i></div>
-			<b>0</b> membres en ligne
 		</div>
 	</div>
 
