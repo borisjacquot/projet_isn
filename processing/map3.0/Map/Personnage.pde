@@ -89,6 +89,12 @@ int pyAvant = persoY;
   {
    vie=vie-deg_lave;
   }
+  if(CarreauSousPerso == case_back)
+  {
+   persoX=540;
+   persoY=620;
+   vie=100;
+  }
 }
 
 void mort() 
@@ -109,7 +115,8 @@ void vie()
   if(vie<=0)
   {
     barrevie=0;
-    image(MessMort,xbox/3,ybox/6); 
+    MessMort = loadImage("MessMort.png");
+    image(MessMort,400,600);
   }
   fill(0);
   rect(10,100,80,30);  //box vie

@@ -56,7 +56,7 @@ void enigme(){
    fill(255);
    rect(0,0,130,100);
    fill(0);
-   text("Enigme 1 fini !",10,15);
+   text("Enigme 1 finie !",10,15);
   } 
   
   //enigme 2
@@ -66,27 +66,49 @@ void enigme(){
     persoX=530;
     }
   }
-      if(enigme2fini==false){
-  if(persoX-25>520 && persoY-10<160 && persoY-10<200){
-    persoX=530;
+    
+    
+    if(persoX==530 && persoY>130 && persoY<220){
+     enigme2fini=true;
+     appel = false;
+     fill(0);
+     text("Enigme 2 finie !",10,30);
     }
     
-    if(enigme2fini==true){
+     if(enigme2fini==true){
    enigme2=false;  //fin enigme 2
    enigme3=true;
    fill(0);
-   text("Enigme 2 fini !",10,30);
+   text("Enigme 2 finie !",10,30);
   } 
     
-    if(persoX-25<540 && persoY-10<160 && persoY-10<200){
-     enigme2fini=true;
-     fill(0);
-     text("Enigme 2 fini !",10,30);
-    }
-    
-    
-    
-  }  //fin enigme 2
+    //fin enigme 2
+ 
+ if(enigme3==true){
+   if (keyPressed) {
+     if (key == 'v'  && enigme3fini==false || key == 'V'  && enigme3fini==false) {
+         enigme1=true;
+         enigme1fini=false;
+         enigme2=false;
+         enigme2fini=false;
+         enigme3=false;
+         persoX=440;
+         persoY=700;
+     }
+     if (key == 'f'  && enigme3fini==false || key == 'F' && enigme3fini==false) {
+         
+         enigme3fini=true;
+         persoX=200;
+         persoY=180;
+     }
+   }
+ }
+if(enigme3fini==true){
+   enigme3=false;
+   text("Enigme 3 finie !",10,45);
+   text("Jeu fini !",10,60);
+}
+
  
  
  
@@ -117,19 +139,43 @@ void enigme(){
   
   //parole enigme 2
   if(persoX-25>140 && persoX-25<190 && persoY-10>620 && persoY-10<670 && enigme1==false){
+    appel = false;
     fill(255);
     rect(20,460,250,100);
     fill(0);
     text("Félicitation Aventurier !",25,480);
-    text("Pour la seconde enigme",25,495);
-    text("Tu va braver l'obscurité !",25,510);
+    text("Pour la seconde énigme",25,495);
+    text("Tu vas braver l'obscurité !",25,510);
     text("Enigme n°2 :",25,525);
-    text("Traverse le batiment à droite",25,540);
+    text("Traverse le bâtiment à droite",25,540);
     text("Regarde où tu mets tes pieds !",25,555);
   }
   
-  
-  
+  //parole enigme3
+  if(enigme3==true){
+    fill(255);
+    rect(20,460,300,120);
+    fill(0);
+    text("Félicitation Aventurier !",25,480);
+    text("Pour la dernière énigme,",25,495);
+    text("Tu va devoir répondre à une question !",25,510);
+    text("Réponds en avec ton clavier.",25,525);
+    text("Si tu te trompes, tu recommence le jeu !",25,540);
+    text("Enigme n°3",25,555);
+    text("Ce jeu est en 3D. Vrai/Faux ?",25,570);
+  }
+  //parole jeu fini
+  if(enigme3fini){
+  fill(255);
+    rect(20,460,300,100);
+    fill(0);
+    text("Ahahah ! Te voilà piégé !",25,480);
+    text("Tu ne sortiras jamais de cet endroit !",25,495);
+    text("Je suis un grand magicien,",25,510);
+    text("je vais reprendre le contrôle",25,525);
+    text("de ce royaume et assouvir ma",25,540);
+    text("vengeance depuis mes 10milles ans!",25,555);
+  }
   
  
  
