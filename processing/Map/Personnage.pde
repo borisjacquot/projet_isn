@@ -1,6 +1,6 @@
         //Chargement et position initial du personnage
 PImage Perso;
-int persoX=400,persoY=400;
+int persoX=440,persoY=700;
 
 //Stats vie
 int vie=100;
@@ -89,6 +89,12 @@ int pyAvant = persoY;
   {
    vie=vie-deg_lave;
   }
+  if(CarreauSousPerso == case_back)
+  {
+   persoX=540;
+   persoY=620;
+   vie=100;
+  }
 }
 
 void mort() 
@@ -109,15 +115,14 @@ void vie()
   if(vie<=0)
   {
     barrevie=0;
-    image(MessMort,xbox/3,ybox/6); 
+    MessMort = loadImage("MessMort.png");
+    image(MessMort,400,600);
   }
   fill(0);
-  rect(10,80,90,60);
+  rect(10,100,80,30);  //box vie
   fill(#ff0000);
   textSize(15);
-  text("Vie",20,100);
-  text(barrevie,50,100);
-  text("Niveau :",20,130);
-  text(partie,80,130);
+  text("Vie",20,120);
+  text(barrevie,50,120);
   
 }

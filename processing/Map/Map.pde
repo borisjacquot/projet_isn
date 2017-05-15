@@ -1,27 +1,17 @@
-int partie=0;    
-int xbox=800;       //largeur boite ( Mettre valeur X de size()  )
-int ybox=800;      //hauteur boite  ( Mettre valeur Y de size()  )
-PImage level1;
-PImage level2;
-PImage level3;
+int partie=0;
+PImage level;
 PImage menu;
+
 
 void setup()
 {
  size(800,800);
-
  
  menu = loadImage("menu.png");
- MessMort = loadImage("MessMort.png");
  Perso = loadImage("persobas2.png");
- level1=loadImage("level1.jpg");
- level1.resize(800, 800);
- level2=loadImage("level2.jpg");
- level2.resize(800, 800);
- level3=loadImage("level3.jpg");
- level3.resize(800, 800);
+ level=loadImage("level.jpg");
+ level.resize(800, 800);
 }
-
 void draw()
 {
   //Menu
@@ -41,26 +31,9 @@ void draw()
     {
        level1();
        mondeDrawGRILLE();
+       deplacement();  
+       enigme();
+       vie();
        mort();
-       deplacement();
-       //ennemi();
-       vie();     
-    }
-      
-    if(partie==2)
-    {
-     level2();
-     mondeDrawGRILLE2();
-     mort();
-     deplacement();
-     vie();
-    }
-    if(partie==3)
-    {
-     level3();
-     mondeDrawGRILLE3();
-     mort();
-     deplacement();
-     vie();
     }
  }
