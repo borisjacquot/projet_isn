@@ -5,7 +5,6 @@ class Player {
   boolean inMotion;
   int currentDirection;
   float currentFrame;
-  
   final int UP = 0, LEFT = 1, DOWN = 2 , RIGHT = 3;
   
   Player() {
@@ -18,13 +17,13 @@ class Player {
   }
  
       void setupSprites() {
-        movement = new PImage[4][3];
-        spriteSheet = loadImage("spritesheet_numbered.png");
-        for(int i = 0; i < 3; i++) {         
-        movement[0][i] = spriteSheet.get(9 + 50 * i, 5, 28, 42);
-        movement[1][i] = spriteSheet.get(9 + 50 * i, 55, 28, 42);  
-        movement[2][i] = spriteSheet.get(9 + 50 * i, 105, 28, 42); 
-        movement[3][i] = spriteSheet.get(9 + 50 * i, 155, 28, 42); 
+        movement = new PImage[4][9];
+        spriteSheet = loadImage("fullimage.png");
+        for(int i = 0; i < 9; i++) {         
+        movement[0][i] = spriteSheet.get(16 + 64 * i, 8, 32, 56);
+        movement[1][i] = spriteSheet.get(16 + 64 * i, 72, 32, 56);  
+        movement[2][i] = spriteSheet.get(16 + 64 * i, 136, 32, 56); 
+        movement[3][i] = spriteSheet.get(16 + 64 * i, 200, 32, 56); 
         }
 }
 
@@ -32,12 +31,12 @@ class Player {
      if(inMotion)
       image(movement[currentDirection][1 + int(currentFrame)], x, y);
       else 
-      image(movement[currentDirection][0], x, y);
+      image(movement[currentDirection][1], x, y);
 
   }
   
   void updatePlayer(int xDelta, int yDelta){
-    currentFrame = (currentFrame + 0.5) % 8;
+    currentFrame = (currentFrame + 0.2) % 8;
     inMotion = true;
     
     if(xDelta == 0 && yDelta == 0)
