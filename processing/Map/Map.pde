@@ -30,7 +30,7 @@ void draw()
     if(partie==1)
     {
        level1();
-       //mondeDrawGRILLE();
+       mondeDrawGRILLE();
        deplacement();  
        enigme();
        vie();

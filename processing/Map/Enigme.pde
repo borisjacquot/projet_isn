@@ -27,10 +27,7 @@ boolean enigme3=false;
 void enigme(){
   
   //Enigme 1
-  fill(255,255,255,80);
-  rect(160,480,40,40);
-  rect(210,480,40,40);
-  rect(260,480,40,40);
+
   if(enigme1==true){
  if (persoX-25>160 && persoX-25<200 && persoY-10>480 && persoY-10<520 && plaque2==false && plaque3==false){  //plaque1 gauche
  plaque1=true;
@@ -120,8 +117,8 @@ if(enigme3fini==true){
   text("Pssst,ici !",140,600);
    }
          //Box detec parole pnj
-  fill(255,255,255,80);
-  rect(140,620,50,50);
+  //fill(255,255,255,80);
+  //rect(140,620,50,50);
   
   //parole debut
   if(persoX-25>140 && persoX-25<190 && persoY-10>620 && persoY-10<670 && enigme1==true){
