@@ -16,4 +16,4 @@ Dépot de notre projet ISN 2017.
 
 ## License
 
-WTFPL.
+[WTFPL](LICENCE.md)
